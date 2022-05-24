@@ -1,3 +1,172 @@
 @import 'utils/variables';
 @import 'components/type';
 @import '../../node_modules/modern-normalize/modern-normalize';
+
+body {
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    line-height: 1.4;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    transition: all ease 0.5s;
+    background-image: none;
+    background-repeat: no-repeat;
+}
+
+/* reset */
+
+button {
+    padding: 0;
+    background-color: transparent;
+    margin: 0;
+    border: none;
+    color: var(--color-bg);
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+p {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+    line-height: 0;
+}
+
+svg {
+    fill: var(--color-bg-offset);
+}
+
+.hidden {
+    position: relative;
+    border: none;
+    display: inline-block;
+    overflow: hidden;
+    display: block;
+    width: 0px;
+    height: 0px;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* dark mode */
+
+:root { 
+    --color-bg: #f1f1f1;
+    --color-bg-offset: #a4a4a4;
+    --color-text: #a4a4a4;
+    --color-text-offset: #f1f1f1;
+    --color-primary: #f1f1f1;
+    --color-secondary: #a4a4a4;
+}
+@media(prefers-color-scheme: dark) {
+    :root {
+        --color-bg: #a4a4a4;
+        --color-bg-offset: #f1f1f1;
+        --color-text: #f1f1f1;
+        --color-text-offset: #a4a4a4;
+        --color-primary: #a4a4a4;
+        --color-secondary: #f1f1f1;
+    }
+}
+[data-theme='light'] {
+    --color-bg: #f1f1f1;
+    --color-bg-offset: #a4a4a4;
+    --color-text: #a4a4a4;
+    --color-text-offset: #f1f1f1;
+    --color-primary: #f1f1f1;
+    --color-secondary: #a4a4a4;
+}
+[data-theme='dark'] {
+    --color-bg: #a4a4a4;
+    --color-bg-offset: #a4a4a4;
+    --color-text: #a4a4a4;
+    --color-text-offset: #a4a4a4;
+    --color-primary: #a4a4a4;
+    --color-secondary: #f1f1f1;
+}
+
+/* dark mode button */
+
+body[data-theme='dark'] .light-mode-button span:nth-child(1) {
+    background-color: #f1f1f1;
+    color: #191919;
+}
+
+body[data-theme='dark'] .light-mode-button span:nth-child(2) {
+    left: 32.5px;
+    background-color: #191919;
+}
+
+.light-mode-button {
+    background: 0;
+    border: 0;
+    box-sizing: border-box;
+    height: 20px;
+    width: 50px;
+    position: relative;
+}
+
+.light-mode-button span:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 50px;
+    background-color: #191919;
+    transition: 0.3s;
+}
+
+.light-mode-button span:nth-child(2) {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: #f1f1f1;
+    transition: 0.3s;
+}
+
+/* header */
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    font-weight: 700;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    transition: all ease 0.5s;
+    z-index: 1;
+
+    &__logo {
+        width: 30px;
+    }
+
+    &__liste {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    &__el {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
