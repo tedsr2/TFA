@@ -3,8 +3,9 @@
 @import '../../node_modules/modern-normalize/modern-normalize';
 
 body {
-    font-family: 'Lora', serif;
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
+    font-weight: 400;
     line-height: 1.4;
     background-color: var(--color-bg);
     color: var(--color-text);
@@ -67,36 +68,36 @@ svg {
 
 :root { 
     --color-bg: #f1f1f1;
-    --color-bg-offset: #a4a4a4;
-    --color-text: #a4a4a4;
+    --color-bg-offset: #222222;
+    --color-text: #222222;
     --color-text-offset: #f1f1f1;
     --color-primary: #f1f1f1;
-    --color-secondary: #a4a4a4;
+    --color-secondary: #222222;
 }
 @media(prefers-color-scheme: dark) {
     :root {
-        --color-bg: #a4a4a4;
+        --color-bg: #222222;
         --color-bg-offset: #f1f1f1;
         --color-text: #f1f1f1;
-        --color-text-offset: #a4a4a4;
-        --color-primary: #a4a4a4;
+        --color-text-offset: #222222;
+        --color-primary: #222222;
         --color-secondary: #f1f1f1;
     }
 }
 [data-theme='light'] {
     --color-bg: #f1f1f1;
-    --color-bg-offset: #a4a4a4;
-    --color-text: #a4a4a4;
+    --color-bg-offset: #222222;
+    --color-text: #222222;
     --color-text-offset: #f1f1f1;
     --color-primary: #f1f1f1;
-    --color-secondary: #a4a4a4;
+    --color-secondary: #222222;
 }
 [data-theme='dark'] {
-    --color-bg: #a4a4a4;
-    --color-bg-offset: #a4a4a4;
-    --color-text: #a4a4a4;
-    --color-text-offset: #a4a4a4;
-    --color-primary: #a4a4a4;
+    --color-bg: #222222;
+    --color-bg-offset: #f1f1f1;
+    --color-text: #f1f1f1;
+    --color-text-offset: #222222;
+    --color-primary: #222222;
     --color-secondary: #f1f1f1;
 }
 
@@ -104,12 +105,12 @@ svg {
 
 body[data-theme='dark'] .light-mode-button span:nth-child(1) {
     background-color: #f1f1f1;
-    color: #191919;
+    color: #222222;
 }
 
 body[data-theme='dark'] .light-mode-button span:nth-child(2) {
     left: 32.5px;
-    background-color: #191919;
+    background-color: #222222;
 }
 
 .light-mode-button {
@@ -127,7 +128,7 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
     left: 0;
     height: 20px;
     width: 50px;
-    background-color: #191919;
+    background-color: #222222;
     transition: 0.3s;
 }
 
@@ -168,5 +169,21 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
         display: flex;
         flex-direction: column;
         justify-content: center;
+    }
+}
+
+/* main */
+
+.intro {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__titre {
+        font-size: 70px;
+        font-weight: 700;
     }
 }
