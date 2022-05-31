@@ -61,7 +61,11 @@ figure {
 }
 
 .is-loading {
-   overflow: hidden;
+    overflow: hidden;
+}
+
+.end-loading {
+    display: none;
 }
 
 .hidden {
@@ -84,11 +88,11 @@ body::-webkit-scrollbar {
     width: 12px;
 }
   
-  body::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track {
     background-color: var(--color-primary);
 }
   
-  body::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
     background-color: var(--color-secondary);
     border-radius: 20px;       
     border: 3px solid var(--color-primary);
@@ -99,7 +103,7 @@ body::-webkit-scrollbar {
 .container {
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(9, 1fr);
     grid-auto-flow: row;
     grid-column-gap: 10px;
     overflow-x: hidden;
@@ -143,8 +147,8 @@ body::-webkit-scrollbar {
 :root { 
     --color-bg: #f1f1f1;
     --color-bg-offset: #222222;
-    --color-text: #222222;
-    --color-text-offset: #f1f1f1;
+    --color-text: #515151;
+    --color-text-offset: #acacac;
     --color-primary: #f1f1f1;
     --color-secondary: #222222;
     --color-shadow: #e0e0e0;
@@ -153,8 +157,8 @@ body::-webkit-scrollbar {
     :root {
         --color-bg: #222222;
         --color-bg-offset: #f1f1f1;
-        --color-text: #f1f1f1;
-        --color-text-offset: #222222;
+        --color-text: #acacac;
+        --color-text-offset: #515151;
         --color-primary: #222222;
         --color-secondary: #f1f1f1;
         --color-shadow: #1f1f1f;
@@ -163,8 +167,8 @@ body::-webkit-scrollbar {
 [data-theme='light'] {
     --color-bg: #f1f1f1;
     --color-bg-offset: #222222;
-    --color-text: #222222;
-    --color-text-offset: #f1f1f1;
+    --color-text: #515151;
+    --color-text-offset: #acacac;
     --color-primary: #f1f1f1;
     --color-secondary: #222222;
     --color-shadow: #e0e0e0;
@@ -172,8 +176,8 @@ body::-webkit-scrollbar {
 [data-theme='dark'] {
     --color-bg: #222222;
     --color-bg-offset: #f1f1f1;
-    --color-text: #f1f1f1;
-    --color-text-offset: #222222;
+    --color-text: #acacac;
+    --color-text-offset: #515151;
     --color-primary: #222222;
     --color-secondary: #f1f1f1;
     --color-shadow: #1f1f1f;
@@ -225,6 +229,7 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
 .titre {
     font-size: 25px;
     font-weight: 700;
+    color: var(--color-bg-offset);
     margin-block-start: 0;
     margin-block-end: 0;
 }
@@ -232,7 +237,7 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
 .accroche {
     font-size: 16px;
     font-weight: 400;
-    opacity: 50%;
+    color: var(--color-text);
     margin-block-start: 0;
     margin-block-end: 0;
 }
@@ -240,21 +245,23 @@ body[data-theme='dark'] .light-mode-button span:nth-child(2) {
 .soustitre {
     font-size: 20px;
     font-weight: 700;
+    color: var(--color-bg-offset);
     margin-block-start: 0;
     margin-block-end: 0;
 }
 
 p {
     font-size: 16px;
-    font-weight: 400; 
-    opacity: 50%; 
+    font-weight: 400;
+    color: var(--color-text);
 }
 
 /* header */
 
-.header-anim {
+header {
     position: fixed;
     z-index: 10;
+    top: 0;
 }
 
 .menu {
@@ -268,6 +275,7 @@ p {
 
     &__logo {
         height: 30px;
+        cursor: pointer;
     }
 
     &__liste {
@@ -356,6 +364,7 @@ p {
         padding: 20px;
         height: 400px;
         width: 90vw;
+        margin-bottom: 40px;
     }
 
     &__preview__textanim {
@@ -385,6 +394,122 @@ p {
     }
 }
 
+.case {
+
+    margin-top: 200px;
+    
+    &__titre {
+        margin-bottom: 20px;
+    }
+
+    &__accroche {
+        margin-bottom: 40px;
+    }
+
+    &__soustitre {
+        margin-bottom: 20px;
+    }
+
+    &__texte {
+        margin-bottom: 40px;
+    }
+
+    &__figure {
+        width: 100%;
+        height: auto;
+    } 
+
+    &__image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* User Journey */
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    place-content: center;
+    justify-self: center;
+
+    label {
+        cursor: pointer;
+    }
+
+    .tab {
+        order: 99;
+        flex-grow: 1;
+        display: none;
+        width: 100vw;
+        overflow-x: scroll;
+        padding: 0px;
+        padding-top: 20px;
+
+        img:first-of-type {
+            display: inherit;
+        }
+
+        img:last-of-type {
+            display: none;
+        }
+    }
+
+    input[type="radio"] {
+        display: none;
+
+        &:checked+label {
+            background: var(--color-bg);
+            transition: all ease 0.5s;
+            border-bottom: var(--color-text) 2px solid;
+            margin-bottom: 0px;
+        }
+    }
+
+    input[type="radio"]:checked+label+.tab {
+        display: block;
+    }
+}
+
+.tab {
+    &__item {
+        margin-bottom: 20px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    img {
+        position: relative;
+        left: 0em;
+        width: 1600px;
+
+        @media (min-width: 1100px) {
+            width: 97vw;
+        }
+    }
+}
+
+body[data-theme="light"] .tab {
+    img:first-of-type {
+        display: inherit;
+    }
+
+    img:last-of-type {
+        display: none;
+    }
+}
+
+body[data-theme="dark"] .tab {
+    img:first-of-type {
+        display: none;
+    }
+
+    img:last-of-type {
+        display: inherit;
+    }
+}
+
 /* footer */
 
 .contact {
@@ -398,7 +523,7 @@ p {
     padding-top: 40px;
     padding-bottom: 40px;
 
-    &__logo {
+    &__factslogo {
         height: 30px;
     }
 
@@ -417,24 +542,34 @@ p {
     &__titre {
         font-size: 16px;
         font-weight: 400;
-        opacity: 50%;
+        color: var(--color-text);
         margin: 20px 0;
     }
 
     &__liste {
-        display: inline-flex;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__el {
+        margin: 0 20px;
+        height: 40px;
+        width: auto;
     }
 
     &__link {
-        display: inline-block;
-        height: 30px;
-        margin: 0 20px;
-        transition: all 0.4s ease 0s;
+        top: 6px;
+        position: relative;
+        height: auto;
         width: auto;
     }
 
     &__logo {
         height: 30px;
+    }
+
+    &__logo:hover {
+        height: 35px;
     }
 }
 
