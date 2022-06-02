@@ -18,23 +18,48 @@ tl.from(".intro__logo", {opacity: 0,})
  
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.from(".preview__square", {
-    opacity: 0,
-    yPercent: 50,
+gsap.from(".preview__square--anim1", {
+    xPercent: 200,
     duration: 0.5,
     scrollTrigger: {
-        trigger: ".preview__square",
+        trigger: ".preview__square--anim1",
         start: "bottom bottom",
     },
- });
+});
 
-gsap.from(".firstlook__logo", {
-    opacity: 0,
-    yPercent: 50,
+gsap.from(".preview__square--anim2", {
+    xPercent: 200,
     duration: 0.5,
     scrollTrigger: {
-        trigger: ".firstlook__logo",
+        trigger: ".preview__square--anim2",
         start: "bottom bottom",
+    },
+});
+
+gsap.from(".preview__square--anim3", {
+    xPercent: -200,
+    duration: 0.5,
+    scrollTrigger: {
+        trigger: ".preview__square--anim3",
+        start: "bottom bottom",
+    },
+});
+
+gsap.from(".preview__image--anim1", {
+    yPercent: 200,
+    duration: 0.5,
+    scrollTrigger: {
+        trigger: ".preview__square--anim1",
+        start: "top center",
+    },
+});
+
+gsap.from(".preview__image--anim2", {
+    yPercent: 200,
+    duration: 0.5,
+    scrollTrigger: {
+        trigger: ".preview__square--anim2",
+        start: "top center",
     },
 });
 
