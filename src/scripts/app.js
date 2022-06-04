@@ -32,7 +32,7 @@ gsap.from(".preview__square--anim2", {
     duration: 0.5,
     scrollTrigger: {
         trigger: ".preview__square--anim2",
-        start: "bottom bottom",
+        start: "top center",
     },
 });
 
@@ -59,7 +59,7 @@ gsap.from(".preview__image--anim2", {
     duration: 0.5,
     scrollTrigger: {
         trigger: ".preview__square--anim2",
-        start: "top center",
+        start: "bottom center",
     },
 });
 
