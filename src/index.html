@@ -62,7 +62,7 @@
   </header>
 
   <section class="intro">
-    <h1 class="hidden">Animation d'intro</h1>
+    <h6 class="hidden">Animation d'intro</h6>
     <div class="intro__animlogo">
       <svg class="intro__logo" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 912.17 192.28"><defs></defs><path class="cls-1" d="M263.27 157.29h-70.06L182 190.45h-47.89L202 2.72h53l67.9 187.73h-48.4ZM251.5 122l-23.26-68.74-23 68.73ZM347.78 46.71a85.91 85.91 0 0 1 33.56-34Q402.85.59 430.14.58q33.42 0 57.23 17.65t31.82 48.13h-50.27A40.62 40.62 0 0 0 453 48.45a44.71 44.71 0 0 0-23.39-6.15q-21.14 0-34.23 14.7t-13.11 39.32q0 24.6 13.11 39.31t34.23 14.71a44.63 44.63 0 0 0 23.39-6.16 40.62 40.62 0 0 0 15.92-17.91h50.27q-8 30.48-31.82 48t-57.23 17.51q-27.27 0-48.8-12.16a86.17 86.17 0 0 1-33.56-33.83q-12-21.66-12-49.47t12-49.61ZM682.32 2.72v36.63h-49.74v151.1h-45.73V39.35h-49.74V2.72ZM736.33 185.63a60.16 60.16 0 0 1-26.07-19.78q-9.76-13.11-10.3-31.56h48.67q1.07 10.43 7.22 15.91t16 5.48q10.15 0 16-4.68t5.89-13a15.38 15.38 0 0 0-4.68-11.5 37.87 37.87 0 0 0-11.5-7.48 186.33 186.33 0 0 0-19.39-6.69 210.91 210.91 0 0 1-29.68-11.23 54.72 54.72 0 0 1-19.79-16.58q-8.29-11-8.29-28.62 0-26.2 19-41T769 0q31 0 50 14.85t20.29 41.35h-49.47q-.54-9.09-6.69-14.31t-15.78-5.21q-8.28 0-13.37 4.41T748.9 53.8q0 9.09 8.56 14.17t26.74 11a250 250 0 0 1 29.55 11.73 56.23 56.23 0 0 1 19.66 16.3q8.28 10.69 8.29 27.55a54 54 0 0 1-8.16 29.14q-8.16 13.11-23.67 20.86t-36.63 7.76q-20.59.01-36.91-6.68ZM865.53 145.55h46.77v46.77h-46.77zM117.43 2.72v36.63H45.86v39.58h63.37v35.57H45.86v75.95H.13V2.72Z"/></svg>
     </div>
@@ -224,6 +224,65 @@
 
   <footer class="footer">
     <p class="footer__content">Copyright &copy; <span class="footer__date">date</span><svg class="footer__logo" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236.88 283.46"><defs></defs><path class="cls-1" d="M177.12 223.7h59.76v59.76h-59.76zM177.12 0v55.32H69.05v59.76h95.69v53.71H69.05v114.67H0V0Z"/></svg> All Rights Reserved.</p>
+    
+    <div id="wrapper" class="wrapper">
+      <div class="wrapper__link">
+        <a class="link" href="#popup1">Ui-kit</a>
+      </div>
+      <div class="wrapper__link">
+        <a class="link" href="#popup2">Crédits</a>
+      </div>
+    </div>
+    
+    <div id="popup1" class="overlay">
+      <div class="popup">
+        <h2>Ui-kit</h2>
+        <a class="close" href="#wrapper">&times;</a>
+        <div class="content">
+          <h1 class="content__titre titre">Ceci est le titre</h1>
+          <h5 class="accroche">Voiçi maintenant le paragraphe d'accroche. Facts is a new social media that focus on the debate and sharing between people. Nowadays, social media try to keep us trapped in a social bubble. It's time to explode them with Facts!</h5>
+          <h4 class="preview__soustitre soustitre">Ceci est le sous-titre</h4>
+          <p class="preview__texte">Voici à présent le paragraphe texte de base. Il s'agit de la typo Inter en 16px avec une hauteur de ligne de x1.4. Pour les sous-titres j'ai utilisé la typo Inter bold en 20px, on retrouve cette dernière également dans le footer et le header en 16px. Voici pour finir un exemple de lien quand il est présent dans un paragraphe: <a href="#popup1" class="link">https://ceci-est-un-lien.com/</a> c'est à nouveau la typo Inter, mais cette fois-ci en bold.</p>
+          <h4 class="preview__soustitre soustitre">Voiçi le style de liste</h4>
+          <ul class="case__liste content__liste">
+            <li class="case__el">– Voiçi une liste;</li>
+            <li class="case__el">– Sans ordre;</li>
+            <li class="case__el">– et contenu particulier.</li>
+          </ul>
+          <h4 class="preview__soustitre soustitre">Voiçi les couleurs</h4>
+          <div class="square">
+            <p class="square__color square__color--black">&nbsp;#222222&nbsp;</p>
+            <p class="square__color square__color--grey1">#ACACAC</p>
+            <p class="square__color square__color--white">&nbsp;&nbsp;#F1F1F1&nbsp;&nbsp;</p>
+            <p class="square__color square__color--grey2">&nbsp;#515151&nbsp;</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="popup2" class="overlay">
+      <div class="popup">
+        <h2>Crédits</h2>
+        <a class="close" href="#wrapper">&times;</a>
+        <div class="content">
+          <h4 class="preview__soustitre soustitre">Font</h4>
+          <a class="link" href="https://fonts.google.com/specimen/Inter?query=inter">Google font -></a>
+          <h4 class="preview__soustitre soustitre">Icon du prototype</h4>
+          <a class="link" href="https://www.flaticon.com/">Flaticon -></a>
+          <h4 class="preview__soustitre soustitre">Vidéo utilisée pour le trailer</h4>
+          <div class="content__link">
+            <div class="content__a">
+              <a class="link" href="https://pixabay.com/fr/videos/">Pixabay -></a>
+            </div>
+            <div class="content__a">
+              <a class="link" href="https://www.pexels.com/">Pexels -></a>
+            </div>
+            <div class="content__a">
+              <a class="link" href="https://www.videvo.net/">Videvo -></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </footer>
 
 </body>
