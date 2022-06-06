@@ -6,62 +6,77 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 //Animations
 
 const tl = gsap.timeline({paused: false, defaults: {duration: 1}});
-
-tl.from(".intro__logo", {opacity: 0,})
-.to(".intro__animlogo", {yPercent: -2000, duration: 1})
-.to(".intro", {opacity: 0, duration: 0.1, onComplete: () => document.querySelector('.intro').classList.add('end-loading')})
-.from(".header-anim", {yPercent: -100, duration: 0.5, onComplete: () => document.querySelector('.content').classList.remove('is-loading')}, "-=0.5")
-.from(".firstlook__titre", {xPercent: -1000}, "-=0.8")
-.from(".firstlook__accroche", {xPercent: -1000}, "-=0.8")
-.from(".firstlook__logo", {xPercent: -1000}, "-=0.8")
-.from(".firstlook__figure", {xPercent: 1000}, "-=0.8");
- 
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.from(".preview__square--anim1", {
-    xPercent: 200,
-    duration: 0.5,
-    scrollTrigger: {
-        trigger: ".preview__square--anim1",
-        start: "bottom bottom",
-    },
-});
+if(document.querySelector(".intro__logo")
+&& document.querySelector(".intro__animlogo")
+&& document.querySelector(".intro")
+&& document.querySelector(".header-anim")
+&& document.querySelector(".firstlook__titre")
+&& document.querySelector(".firstlook__accroche")
+&& document.querySelector(".firstlook__logo")
+&& document.querySelector(".firstlook__figure")
+&& document.querySelector(".preview__square--anim1")
+&& document.querySelector(".preview__square--anim2")
+&& document.querySelector(".preview__square--anim3")
+&& document.querySelector(".preview__image--anim1")
+&& document.querySelector(".preview__image--anim2")){
+    
+    tl.from(".intro__logo", {opacity: 0,})
+    .to(".intro__animlogo", {yPercent: -2000, duration: 1})
+    .to(".intro", {opacity: 0, duration: 0.1, onComplete: () => document.querySelector('.intro').classList.add('end-loading')})
+    .from(".header-anim", {yPercent: -100, duration: 0.5, onComplete: () => document.querySelector('.content').classList.remove('is-loading')}, "-=0.5")
+    .from(".firstlook__titre", {xPercent: -1000}, "-=0.8")
+    .from(".firstlook__accroche", {xPercent: -1000}, "-=0.8")
+    .from(".firstlook__logo", {xPercent: -1000}, "-=0.8")
+    .from(".firstlook__figure", {xPercent: 1000}, "-=0.8");
+    
+    gsap.from(".preview__square--anim1", {
+        xPercent: 200,
+        duration: 0.5,
+        scrollTrigger: {
+            trigger: ".preview__square--anim1",
+            start: "bottom bottom",
+        },
+    });
+    
+    gsap.from(".preview__square--anim2", {
+        xPercent: 200,
+        duration: 0.5,
+        scrollTrigger: {
+            trigger: ".preview__square--anim2",
+            start: "top center",
+        },
+    });
+    
+    gsap.from(".preview__square--anim3", {
+        xPercent: -200,
+        duration: 0.5,
+        scrollTrigger: {
+            trigger: ".preview__square--anim3",
+            start: "bottom bottom",
+        },
+    });
+    
+    gsap.from(".preview__image--anim1", {
+        yPercent: 200,
+        duration: 0.5,
+        scrollTrigger: {
+            trigger: ".preview__square--anim1",
+            start: "top center",
+        },
+    });
+    
+    gsap.from(".preview__image--anim2", {
+        yPercent: 200,
+        duration: 0.5,
+        scrollTrigger: {
+            trigger: ".preview__square--anim2",
+            start: "bottom center",
+        },
+    });
+}
 
-gsap.from(".preview__square--anim2", {
-    xPercent: 200,
-    duration: 0.5,
-    scrollTrigger: {
-        trigger: ".preview__square--anim2",
-        start: "top center",
-    },
-});
-
-gsap.from(".preview__square--anim3", {
-    xPercent: -200,
-    duration: 0.5,
-    scrollTrigger: {
-        trigger: ".preview__square--anim3",
-        start: "bottom bottom",
-    },
-});
-
-gsap.from(".preview__image--anim1", {
-    yPercent: 200,
-    duration: 0.5,
-    scrollTrigger: {
-        trigger: ".preview__square--anim1",
-        start: "top center",
-    },
-});
-
-gsap.from(".preview__image--anim2", {
-    yPercent: 200,
-    duration: 0.5,
-    scrollTrigger: {
-        trigger: ".preview__square--anim2",
-        start: "bottom center",
-    },
-});
 
 //Dark mode
 
